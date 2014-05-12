@@ -4,10 +4,12 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
 insecure
 iron-router
 scss
 bootstrap3-sass
 jqueryui
 spin
+accounts-password
+accounts-ui-bootstrap-3
+accounts-base

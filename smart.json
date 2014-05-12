@@ -4,6 +4,7 @@
     "bootstrap3-sass": {},
     "iron-router": {},
     "jqueryui": {},
-    "spin": {}
+    "spin": {},
+    "accounts-ui-bootstrap-3": {}
   }
 }
