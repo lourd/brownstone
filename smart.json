@@ -5,6 +5,7 @@
     "iron-router": {},
     "jqueryui": {},
     "spin": {},
-    "accounts-ui-bootstrap-3": {}
+    "accounts-ui-bootstrap-3": {},
+    "jpanel": {}
   }
 }

@@ -1,6 +1,6 @@
 <template name="topNavBar">
     
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="top-bar navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Toggle button and brand anchor -->
         <div class="navbar-header">
@@ -10,90 +10,126 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="/" class="navbar-brand">GLISF</a>
+            <a href="/" class="navbar-brand">
+                Brownstone
+            </a>
+            {{#if currentUser}}
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown app-menu">
+                        <a href="" class="dropdown-toggle nav-text" data-toggle="dropdown">
+                            <i class="fa fa-bars"></i>
+                            <b class="caret"></b>
+                        </a>
+                        <div class="dropdown-menu" id="app-menu">
+                            {{#each apps}}
+                                {{>appItem}}
+                            {{/each}}
+                        </div>
+                    </li>
+                </ul>
+            {{/if}}
         </div>
         <!-- All of the nav items to be collapsed -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
+            {{#if currentUser}}
+                {{> notificationsButton}}
                 {{> groupButtons}}
-                {{> loginButtons}}
+                {{> userButtons}}
+            {{else}}
+                {{> loggedOutButtons}}
+            {{/if}}
 
             </ul>
         </div>
     </div>
 </nav>
 
-
 </template>
 
+<template name="appItem">
+    <li>
+        <a href="{{pathFor this.routeName}}" class="app-name">{{name}}</a>
+    </li>
+</template>
 
+<!-- Notifications menu -->
+<template name="notificationsButton">
+    <li class="dropdown">
+        <a href="" class="dropdown-toggle nav-text" data-toggle="dropdown">
+            <i class="fa fa-bell-o lgr"></i>
+        </a>
+        <ul class="dropdown-menu">
+            <li style="padding: 9px; font-weight: bold;">No new notifications</li>
+        </ul>
+    </li>
+</template>
 
+<!-- Group Buttons -->
 <template name="groupButtons">
-    {{#if currentUser}}
-        {{#with currentGroup}}
-        {{debug}}
-        <li class="dropdown">
-            {{debug}}
-            <a href="{{pathFor 'groupPage' groupId=_id}}">{{name}}</a>
-        </li>
-        
-        {{/with}}
-
-    <!-- {{else}} -->
-    {{/if}}
+    <li class="dropdown">
+        <a href="" class="dropdown-toggle nav-text" data-toggle="dropdown">
+            <i class="fa fa-home lgr"></i>
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                {{debug}}
+                <a href="{{pathFor 'groupMembersPage' groupId=currentUser.profile.groupId}}" class="group-menu-item"><i class="fa fa-users fa-fw"></i>&nbsp; Members</a>
+                <a href="{{pathFor 'groupAppsPage' groupId=currentUser.profile.groupId}}" class="group-menu-item"><i class="fa fa-puzzle-piece fa-fw"></i>&nbsp; Apps</a>
+                <a href="{{pathFor 'groupSettingsPage' groupId=currentUser.profile.groupId}}" class="group-menu-item"><i class="fa fa-wrench fa-fw"></i>&nbsp; Settings</a>
+            </li>
+        </ul>
+    </li>
 </template>
-
-
-
-
 
 
 
 <!-- Navbar buttons for when a user is logged in -->
-<template name="myLoginButtons">
-    {{#if currentUser}}
-        {{#if loggingIn}}
-            <li><span>Logging in...</span></li>
-        {{else}}
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Bed Bitdiddle <b class="caret"></b>
-                    <!-- {{currentUser.profile.firstName}} -->
-                </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="{{pathFor 'accountEdit'}}">
-                            <span class="glyphicon glyphicon-user"></span> Account Settings
-                        </a>
-                    </li>
-                    <li><a href="#" id="logout">Logout</a></li>
-                </ul>
-            </li>
-        {{/if}}
-    {{else}}
-        {{>loggedOutButtons}}
-    {{/if}}
+<template name="userButtons">
 
+    {{#if loggingIn}}
+        <li><span>Logging in...</span></li>
+    {{else}}
+        <li class="dropdown">
+            <a href="#" class="nav-text dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-user lgr"></i>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="{{pathFor 'profilePage'}}" class="user-menu-item"><i class="fa fa-wrench fa-fw"></i>&nbsp; Profile</a>
+                </li>
+                <li>
+                    <a href="" class="user-menu-item" id="logout"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Logout</a>
+                </li>
+            </ul>
+        </li>
+    {{/if}}
 
 </template>
 
 <!-- Navbar buttons for when a user is logged out -->
 <template name="loggedOutButtons">
+
     <li id="login-dropdown-list" class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <a class="nav-text signin dropdown-toggle" data-toggle="dropdown">
             Sign In / Up <b class="caret"></b>
         </a>
-        <div class="dropdown-menu">
-            <input type="email" id="login-email" class="form-control" placeholder="Email">
-            <input type="password" id="login-password" class="form-control" placeholder="Password">
-            <button class="btn btn-primary col-sm-12" id="login-buttons-password" type="button">
-                Sign in
-            </button>
+        <div class="login-dropdown dropdown-menu">
+            <form class="sign-in" role="form">
+                <input type="email" id="login-email" class="form-control" placeholder="Email">
+                <input type="password" id="login-password" class="form-control" placeholder="Password">
+                <button class="btn btn-app-primary col-sm-12" type="submit">
+                    Sign in
+                </button>
+            </form>
             
             <div id="login-other-options">
-                <a href="#" id="forgot-password-link" class="pull-left">Forgot password?</a>
+                <!-- <a href="#" id="forgot-password-link" class="pull-left">Forgot password?</a> -->
                 <a href="{{pathFor 'createAccountPage'}}" class="pull-right">Create account</a>
             </div>
         </div>
     </li>
+
 </template>
