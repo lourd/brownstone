@@ -21,7 +21,7 @@ Meteor.publish('apps', function() {
 
 Meteor.publish('groupApps', function(groupId) {
     var group = Groups.findOne(groupId);
-    return groupId && Apps.find({
+    return group && group.apps && Apps.find({
         _id: { $in: group.apps}
     });
 });

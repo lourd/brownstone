@@ -207,6 +207,10 @@ a, a:visited, a:active {
     padding-right: 22px;
 }
 
+#item-list .todo .item-tags .edittag {
+    color: black;
+}
+
 #item-list .todo .item-tags .tag .remove {
     position: absolute;
     top: 0;

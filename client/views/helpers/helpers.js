@@ -33,8 +33,15 @@ UI.registerHelper("groupName", function() {
 UI.registerHelper("groupApps", function() {
     if (Meteor.user() && Groups.find().count() ) {
       var group = Groups.findOne(Meteor.user().profile.groupId);
-      return group && Apps.find({
+      return group && group.apps && Apps.find({
           _id: { $in: group.apps}
       });
+    }
+});
+
+UI.registerHelper("noApps", function() {
+    if (Meteor.user() && Groups.find().count() ) {
+        var group = Groups.findOne(Meteor.user().profile.groupId);
+        return group && group.apps && group.apps.length <= 0;
     }
 })

@@ -1,7 +1,7 @@
 @import 'packages/bootstrap3-sass/bootstrap';
 
 //////////////////////////////////////////
-//////////////          VARIABLES
+// Variables
 //////////////////////////////////////////
 $brand-font-size: 30px;
 $navbar-height: 50px;
@@ -16,6 +16,10 @@ body {
     padding-top: $navbar-height + 10px;
 }
 
+ul {
+    list-style: none;
+}
+
 #login-dropdown-list {
     #login-other-options {
         a {
@@ -24,7 +28,7 @@ body {
     }
 }
 
-#signup-form, #profile-edit-form, #password-form, #group-edit-form {
+#signup-form, #profile-edit-form, #password-form, #group-edit-form, #group-create-form {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -86,6 +90,20 @@ i.lgr {
     li.app-menu > a {
         padding-bottom: 18px;
     }
+    #app-menu {
+        li.no-apps {
+            padding: 7px 15px;
+            a {
+                display: inline;
+                color: #428bca;
+                padding-left: 0px;
+                &:hover {
+                    background-color: transparent;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }
 
 .btn-app-primary {
@@ -96,5 +114,21 @@ i.lgr {
         color: white;
         background-color: $brand-red-hover;
         border-color: $brand-red-hover;
+    }
+}
+
+.app-item {
+    i {
+        color: $brand-red;
+        display: inline-block;
+        padding-bottom: 5px;
+        padding-right: 12px;
+        &:hover, &:focus {
+            color: $brand-red-hover;
+            cursor: pointer;
+        }
+    }
+    h3 {
+        display: inline-block;
     }
 }

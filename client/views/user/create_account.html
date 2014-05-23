@@ -30,9 +30,11 @@
                     <option value="{{_id}}">{{name}}</option>
                 {{/each}}
             </select>
+            <span class="no-account-explain">Don't see your group here? <a href="{{pathFor 'groupCreatePage'}}">Make it now</a></span>
         </div>
 
         <button type="submit" class="btn btn-app-primary btn-default">Create account</button>
+
     </form>
 
 

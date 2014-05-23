@@ -1,12 +1,18 @@
 <template name="groupAppsPage">
     <h1 class="page-header">{{groupName}} Apps</h1>
     <ul class="app-list">
-        {{#each groupApps}}
+        {{#if noApps}}
             <li>
-                <a href="{{pathFor this.routeName}}">
-                <h3>{{name}} <small>{{description}}</small></h3>
-                </a>
+                <h3>No apps! <a href="{{pathFor 'appsPage'}}">Add some</a></h3>
             </li>
-        {{/each}}
+        {{else}}
+            {{#each groupApps}}
+                <li>
+                    <a href="{{pathFor this.routeName}}">
+                    <h3>{{name}} <small>{{description}}</small></h3>
+                    </a>
+                </li>
+            {{/each}}
+        {{/if}}
     </ul>
 </template>

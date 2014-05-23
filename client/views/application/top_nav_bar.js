@@ -1,9 +1,3 @@
-Template.topNavBar.helpers({
-    apps: function() {
-        return Apps.find();
-    } 
-});
-
 Template.topNavBar.events({
     'click #logout': function(evt) {
         evt.preventDefault();

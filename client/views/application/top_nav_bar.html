@@ -21,9 +21,13 @@
                             <b class="caret"></b>
                         </a>
                         <div class="dropdown-menu" id="app-menu">
-                            {{#each apps}}
-                                {{>appItem}}
-                            {{/each}}
+                            {{#if noApps}}
+                                <li class="no-apps">No apps! <a href="{{pathFor 'appsPage'}}">Add some</a></li>
+                            {{else}}
+                                {{#each groupApps}}
+                                    {{>appItem}}
+                                {{/each}}
+                            {{/if}}
                         </div>
                     </li>
                 </ul>

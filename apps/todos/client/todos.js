@@ -21,11 +21,11 @@ Session.setDefault('editing_itemname', null);
 
 // Subscribe to 'lists' collection on startup.
 // Select a list once data has arrived.
-var listsHandle = Meteor.subscribe('lists', function () {
+var listsHandle = Meteor.subscribe('groupLists', function () {
   if (!Session.get('list_id')) {
     var list = Lists.findOne({}, {sort: {name: 1}});
     if (list)
-      Router.setList(list._id);
+      todoRouter.setList(list._id);
   }
 });
 
@@ -87,7 +87,7 @@ Template.lists.lists = function () {
 
 Template.lists.events({
   'mousedown .list': function (evt) { // select list
-    Router.setList(this._id);
+    todoRouter.setList(this._id);
   },
   'click .list': function (evt) {
     // prevent clicks on <a> from refreshing the page.
@@ -105,8 +105,12 @@ Template.lists.events(okCancelEvents(
   '#new-list',
   {
     ok: function (text, evt) {
-      var id = Lists.insert({name: text});
-      Router.setList(id);
+      var newList = {
+        name: text,
+        groupId: Meteor.user().profile.groupId
+      }
+      var id = Lists.insert(newList);
+      todoRouter.setList(id);
       evt.target.value = "";
     }
   }));
@@ -308,4 +312,4 @@ var TodosRouter = Backbone.Router.extend({
   }
 });
 
-Router = new TodosRouter;
+todoRouter = new TodosRouter;
