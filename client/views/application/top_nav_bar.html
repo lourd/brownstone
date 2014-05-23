@@ -16,7 +16,7 @@
             {{#if currentUser}}
                 <ul class="nav navbar-nav navbar-left">
                     <li class="dropdown app-menu">
-                        <a href="" class="dropdown-toggle nav-text" data-toggle="dropdown">
+                        <a class="link-stub dropdown-toggle nav-text" data-toggle="dropdown">
                             <i class="fa fa-bars"></i>
                             <b class="caret"></b>
                         </a>
@@ -61,7 +61,7 @@
 <!-- Notifications menu -->
 <template name="notificationsButton">
     <li class="dropdown">
-        <a href="" class="dropdown-toggle nav-text" data-toggle="dropdown">
+        <a class="link-stub dropdown-toggle nav-text" data-toggle="dropdown">
             <i class="fa fa-bell-o lgr"></i>
         </a>
         <ul class="dropdown-menu">
@@ -73,7 +73,7 @@
 <!-- Group Buttons -->
 <template name="groupButtons">
     <li class="dropdown">
-        <a href="" class="dropdown-toggle nav-text" data-toggle="dropdown">
+        <a class="link-stub dropdown-toggle nav-text" data-toggle="dropdown">
             <i class="fa fa-home lgr"></i>
             <b class="caret"></b>
         </a>
@@ -97,7 +97,7 @@
         <li><span>Logging in...</span></li>
     {{else}}
         <li class="dropdown">
-            <a href="#" class="nav-text dropdown-toggle" data-toggle="dropdown">
+            <a class="link-stub nav-text dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-user lgr"></i>
                 <b class="caret"></b>
             </a>
@@ -106,7 +106,7 @@
                     <a href="{{pathFor 'profilePage'}}" class="user-menu-item"><i class="fa fa-wrench fa-fw"></i>&nbsp; Profile</a>
                 </li>
                 <li>
-                    <a href="" class="user-menu-item" id="logout"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Logout</a>
+                    <a class="link-stub user-menu-item" id="logout"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Logout</a>
                 </li>
             </ul>
         </li>
