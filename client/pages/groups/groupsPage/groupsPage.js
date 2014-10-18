@@ -24,6 +24,6 @@ Template.groupsPage.events({
 
 Template.groupsPage.helpers({
 	groupContent: function(){
-		return Template[Session.get("groupBtnSelected")];
+		return Session.get("groupBtnSelected");
 	}
 });

@@ -1,5 +1,24 @@
 <template name="myGroupsPage">
 	<main id="myGroupsPage">
-	My groups
+	{{#each groupOfMine}}
+		{{>groupTile}}
+	{{/each}}
 	</main>
+</template>
+
+<template name="groupTile">
+	<section id="groupTile">
+
+		{{name}}
+		<section id ="Group Buttons">
+			<button id="viewGroupBtn" class ="btn btn-default">
+				View Group
+			</button>
+			<button id="leaveGroupBtn" class ="btn btn-default">
+				Leave Group
+			</button>
+		</section>
+
+	</section>
+	
 </template>
