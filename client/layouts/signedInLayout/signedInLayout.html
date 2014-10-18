@@ -1,0 +1,12 @@
+<head>
+  <title>Brownstone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+
+<template name="signedInLayout">
+  {{> yield region='header' }}
+  <div id="signedInLayout">
+    {{> yield region='leftMenu' }}
+    {{> yield }}
+  </div>
+</template>

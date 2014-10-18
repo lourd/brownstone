@@ -1,0 +1,10 @@
+#signedInLayout {
+  position: absolute;
+  @include calc(height, '100% - #{$navbar-height}');
+  width: 100%;
+  @include display(flex);
+
+  main {
+    @include flex-grow(1);
+  }
+}
