@@ -1,0 +1,39 @@
+<template name="appHeader">
+  <header id="appHeader">
+    <nav id="headerNav" class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#headerLinksDiv">
+            <span class="sr-only">Toggle navigation</span>
+            <span id="firstBar" class="icon-bar"></span>
+            <span id="secondBar" class="icon-bar"></span>
+            <span id="thirdBar" class="icon-bar"></span>
+          </button>
+          <a id="headerLogoLink" class="navbar-brand" href="/" >
+            Brownstone
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="headerLinksDiv">
+          <ul class="nav navbar-nav navbar-right">
+            {{#if isLoggedIn }}
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{signedInAs}}<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a id="signOutLink" href="{{pathFor 'signOutRoute'}}">Sign-Out</a></li>
+                  <li><a id="createShrubLink" href="{{pathFor 'createShrub'}}">Create shrub</a></li>
+                </ul>
+              </li>
+            {{else}}
+              <li><a id="signUpButton" href="{{pathFor 'signUpRoute'}}">Sign Up</a></li>
+              <li><a id="signInButton" href="{{pathFor 'signInRoute'}}">Sign In</a></li>
+            {{/if}}
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+</template>

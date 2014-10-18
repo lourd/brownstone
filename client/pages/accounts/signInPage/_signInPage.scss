@@ -1,0 +1,12 @@
+#signInPage{
+  @include simplePage();
+
+  #otherSignInBtns {
+    @include display(flex);
+    @include justify-content(space-between);
+    button {
+      @include flex-basis(49%);
+    }
+  }
+
+}

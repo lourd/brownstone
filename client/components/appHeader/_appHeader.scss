@@ -1,0 +1,48 @@
+#appHeader{
+
+  .navbar-toggle {
+    border-color: transparent;
+    padding-top: 4px;
+    .icon-bar {
+      width: 25px;
+      height: 4px;
+      @include transition(transform 350ms, opacity 350ms);
+    }
+    // Color the hamburger icon when it's hovered and when the navbar is open
+    &:hover {
+      .icon-bar {
+        background-color: $navbar-default-link-hover-color;
+      }
+    }
+    // This is where the navbar icon animation is implemented
+    &:not(.collapsed) > #firstBar {
+      @include transform(translateY(9px) rotate(-45deg));
+    }
+    &:not(.collapsed) > #secondBar {
+      opacity: 0;
+      // @include transform(translateX(15px));
+    }
+    &:not(.collapsed) > #thirdBar {
+      @include transform(translateY(-8px) rotate(45deg));
+    }
+  }
+
+  #fullLogo {
+    height: $navbarLogoHeight;
+    width: auto;
+    path {
+      fill: $navbar-default-link-color;
+    }
+    &:hover {
+      path {
+        fill: $navbar-default-link-hover-color;
+      }
+    }
+  }
+
+  #headerLogoLink { 
+    padding-top: 15px;
+    padding-left: 10px;
+  }
+
+}

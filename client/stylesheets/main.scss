@@ -1,0 +1,42 @@
+@import 'styleVariables';
+@import 'structureVariables';
+@import 'bootstrapVariables';
+// Import bootstrap last as to override variables correctly
+@import 'bootstrap';
+@import 'bourbon';
+@import 'mixins';
+
+// Import component styles
+@import 'pages';
+
+// Import workflows styles
+@import 'components';
+
+
+/**
+ * Global styling
+ */
+ul {
+  list-style: none;
+}
+
+.hidden{
+  visibility: hidden;
+}
+.visible{
+  visibility: visible;
+}
+.fullwidth{
+  width: 100%;
+}
+.centered{
+  text-align: center;
+}
+
+// This is a specific webkit bug for inline SVG
+// http://stackoverflow.com/a/12631326/1546294
+// https://bugs.webkit.org/show_bug.cgi?id=82489
+svg {
+  max-height: 100%;
+  max-width: 100%;
+}
