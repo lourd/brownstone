@@ -1,0 +1,1 @@
+CheckIns = new Meteor.Collection('checkIns');

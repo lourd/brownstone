@@ -11,6 +11,7 @@ Router.configure({
   }
 });
 
+
 // // Have to sign in to access all application pages
 // Router.onBeforeAction(function() {
 //   if (!Meteor.loggingIn() && !Meteor.user()) {
@@ -39,12 +40,7 @@ Router.onAfterAction(collapseHeaderNav);
 //--------------------------------------------------------------
 // Root route
 
-Router.route('landingRoute', {
+Router.route('landingPageRoute', {
   path: '/',
-  onBeforeAction: function(){
-    if (!Meteor.loggingIn() && !Meteor.user())
-      this.redirect('/sign-in');
-    else
-      this.redirect('/dashboard');
-  }
+  template: 'landingPage'
 });

@@ -15,7 +15,7 @@ Template.signInPage.events({
       if (error) {
         return Session.set('entryError', error.reason);
       } else{
-        return Router.go("/");
+        return Router.go("/dashboard");
       }
     });
   },
