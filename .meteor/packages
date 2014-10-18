@@ -11,4 +11,5 @@ fourseven:scss
 pfafman:font-awesome-4
 reywood:bootstrap3-sass
 wolves:bourbon
-
+meteorhacks:npm
+npm-container

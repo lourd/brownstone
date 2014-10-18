@@ -1,1 +1,1 @@
-Recruitment = new Meteor.Collection('recruitments');
+Recruitments = new Meteor.Collection('recruitments');
