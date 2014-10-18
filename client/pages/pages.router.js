@@ -3,6 +3,11 @@ Router.route("signUpRoute", {
   template: "signUpPage"
 });
 
+Router.route("groupsRoute",{
+  path:"/groups",
+  template:"groupsPage"
+});
+
 Router.route("signInRoute", {
   path: "/sign-in",
   template: "signInPage"

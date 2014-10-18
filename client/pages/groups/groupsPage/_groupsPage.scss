@@ -1,0 +1,16 @@
+#groupsPage {
+	@include simplePage();
+	#groupButtons {
+		@include display(flex);
+		@include justify-content(space-between);
+		margin-bottom:10px;
+
+	}
+	#groupContentSection{
+		border-width:1px;
+		border-style:solid;
+	}
+	.selectedButton {
+		background-color: gray;
+	}
+}

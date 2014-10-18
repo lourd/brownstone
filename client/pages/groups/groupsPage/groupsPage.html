@@ -1,0 +1,22 @@
+<template name="groupsPage">
+	<main id="groupsPage">
+		<section id="groupButtons">
+			<button id="myGroupsBtn" class="btn btn-default"> My Groups
+			</button>
+			<button id="joinGroupBtn" class="btn btn-default"> Join a Group
+			</button>
+			<button id="createGroupBtn" class="btn btn-default"> Create a Group
+			</button>
+		</section>
+		
+		<form id="searchBarText">
+			<div class="form-group">
+				<input id="groupName" class="form-control" placeholder="Find a group" type="text">
+			</div>
+		</form>
+		
+		<section id="groupContentSection">
+			{{> groupContent}}
+		</section>
+	</main>
+</template>

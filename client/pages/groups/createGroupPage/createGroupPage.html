@@ -1,0 +1,34 @@
+<template name="createGroupPage">
+	<div id="createGroupPage">
+	<h2>Create New Group</h2>
+		<section id= "newGroupTypeBtns">
+			<button id="fratTypeBtn" class="btn btn-default">
+			Fraternity
+			</button>
+			<button id="soroTypeBtn" class="btn btn-default">
+			Sorority
+			</button>
+			<button id="ilgTypeBtn" class="btn btn-default">
+			ILG
+			</button>
+			<button id="otherTypeBtn" class="btn btn-default">
+			Other
+			</button>
+		</section>
+
+		<form id="newGroupForm">
+			<div class="form-group">
+				Group Type
+				<input id ="newGroupName" class="form-control" placeholder="Group name" type="text">
+				Gorverning Body
+				<input id ="newGroupGovernBody" class="form-control" placeholder="GoverningBody" type="text">
+			</div>
+		</form>
+
+		<section id="newGroupSubmit">
+			<button id="newGroupSubmitBtn" class="btn btn-default">
+				Create
+			</button>
+		</section>
+	</div>
+</template>

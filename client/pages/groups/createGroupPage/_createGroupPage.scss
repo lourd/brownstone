@@ -1,0 +1,17 @@
+#createGroupPage {
+
+	#newGroupTypeBtns{
+		margin-bottom: 10px;
+	}
+
+	.form-control{
+		margin-bottom:8px;
+	}
+
+	#newGroupSubmitBtn{
+		background-color: blue;
+		color:white;
+		@include flex-basis(30%);
+	}
+
+}
