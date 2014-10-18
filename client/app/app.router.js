@@ -24,7 +24,8 @@ Router.onBeforeAction(function() {
     'forgotPasswordRoute',
     'signOutRoute',
     'resetPasswordRoute',
-    'pageNotFoundRoute'
+    'pageNotFoundRoute',
+    'landingPageRoute'
   ]
 });
 
@@ -39,12 +40,7 @@ Router.onAfterAction(collapseHeaderNav);
 //--------------------------------------------------------------
 // Root route
 
-Router.route('landingRoute', {
+Router.route('landingPageRoute', {
   path: '/',
-  onBeforeAction: function(){
-    if (!Meteor.loggingIn() && !Meteor.user())
-      this.redirect('/sign-in');
-    else
-      this.redirect('/dashboard');
-  }
+  template: 'landingPage'
 });

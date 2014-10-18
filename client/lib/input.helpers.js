@@ -1,7 +1,7 @@
 validatePassword = function(password, confirmPassword) {
   var errors = [];
 
-  if(password != passwordConfirm) {
+  if(password != confirmPassword) {
     errMsg.push("Passwords do not match");
   }
 
