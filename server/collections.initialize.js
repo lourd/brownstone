@@ -60,6 +60,14 @@ Meteor.startup(function() {
 			admins: []
 		});
 
+		var sigmaKappaId = Groups.insert({
+			name: 'Sigma Kappa',
+			type: 'SORORITY',
+			members: [],
+			positions: [],
+			admins: []
+		});
+
 		// Two ILGs
 		var wilgId = Groups.insert({
 			name: 'WILG',
