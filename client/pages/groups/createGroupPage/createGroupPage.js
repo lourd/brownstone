@@ -1,16 +1,16 @@
 Template.createGroupPage.events({
 	'click #fratTypeBtn' : function(event, template){
-		Session.set("newGroupTypeSelected","fratType");
+		Session.set("newGroupTypeSelected","Fraternity");
 		template.$(".selectedButton").removeClass("selectedButton");
 		template.$("#fratTypeBtn").addClass("selectedButton");
 	},
 	'click #soroTypeBtn' : function(event, template){
-		Session.set("newGroupTypeSelected","soroType");
+		Session.set("newGroupTypeSelected","Sorority");
 		template.$(".selectedButton").removeClass("selectedButton");
 		template.$("#soroTypeBtn").addClass("selectedButton");
 	},
 	'click #ilgTypeBtn' : function(event, template){
-		Session.set("newGroupTypeSelected","ilgType");
+		Session.set("newGroupTypeSelected","ILG");
 		template.$(".selectedButton").removeClass("selectedButton");
 		template.$("#ilgTypeBtn").addClass("selectedButton");
 	},
@@ -19,4 +19,20 @@ Template.createGroupPage.events({
 		template.$(".selectedButton").removeClass("selectedButton");
 		template.$("#otherTypeBtn").addClass("selectedButton");
 	},	
+});
+
+
+Template.createGroupPage.helpers({
+	governingBody: function () {
+		switch (Session.get("newGroupTypeSelected")) {
+			case 'Fraternity':
+				return 'IFC';
+			case 'Sorority':
+				return 'Panhel';
+			case 'ILG':
+				return 'Living Group Council';
+			default:
+				return 'None';
+		}
+	}
 });
