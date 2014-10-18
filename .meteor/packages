@@ -3,15 +3,12 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-standard-app-packages
-insecure
-iron-router
-scss
-bootstrap3-sass
-jqueryui
-spin
+meteor-platform
+iron:router
 accounts-password
-accounts-ui-bootstrap-3
-accounts-base
-backbone
-jpanel
+email
+fourseven:scss
+pfafman:font-awesome-4
+reywood:bootstrap3-sass
+wolves:bourbon
+

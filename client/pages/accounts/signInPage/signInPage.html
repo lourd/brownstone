@@ -1,0 +1,21 @@
+<template name='signInPage'>
+  <main id="signInPage">
+    <h1 class="accountsTitle">Sign In</h1>
+    <form id='signInForm'>
+      {{> entryError}}
+      <div class="form-group">
+        <input id="emailInput" class="form-control" placeholder="Username or email address" autofocus="autofocus" autocapitalize="off" autocorrect="off">
+      </div>
+      <div class="form-group">
+        <input id="passwordInput" type="password" class="form-control" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <input id="signInBtn" type="submit" class="btn btn-primary btn-block" value="Sign in">
+      </div>
+    </form>
+    <section id="otherSignInBtns">
+      <button id="forgotPasswordBtn" class="btn btn-default">Forgot password?</button>
+      <button id="signUpBtn" class="btn btn-default">Sign up</button>
+    </section>
+  </main>
+</template>

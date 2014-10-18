@@ -1,0 +1,77 @@
+/**
+ * tint-picture
+ * Darkens an image based on an opacity of black
+ * $opacity - desired darkness level of the tint
+ */
+@mixin tint-picture($opacity) {
+  &::after {
+    position: absolute;
+    z-index: 1;
+    background-color: black;
+    opacity: $opacity;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+  }
+}
+
+// A basic media query mixin that makes responsive work simple.
+@mixin respond-to($screen-size) {
+  
+  @if $screen-size == small {
+    @media only screen and (min-width: $smScreenMin) { @content; }
+  }
+
+  @if $screen-size == medium {
+    @media only screen and (min-width: $mdScreenMin) { @content; }
+  }
+
+  @if $screen-size == large {
+   @media only screen and (min-width : $lgScreenMin) { @content;  }
+  }
+
+  @if $screen-size == xlarge {
+    @media only screen and (min-width: $xlScreenMin) { @content; }
+  }
+
+  @if $screen-size == xsmall-only {
+    @media only screen and (max-width : $smScreenMin - 1) { @content; }
+  }
+  
+  @if $screen-size == small-only {
+    @media only screen and (min-width : $smScreenMin) and (max-width : $mdScreenMin - 1) { @content; }
+  }
+
+  @if $screen-size == medium-only {
+    @media only screen and (min-width : $mdScreenMin) and (max-width : $lgScreenMin - 1) { @content; } // 800px -> 1024px
+  }
+
+  @if $screen-size == xsmall-and-small {
+    @media only screen and (max-width : $mdScreenMin - 1) { @content; }
+  }
+
+  @if $screen-size == small-and-medium {
+    @media only screen and (min-width: $smScreenMin) and (max-width : $lgScreenMin - 1) { @content; }
+  }
+
+  @if $screen-size == not-large {
+    @media only screen and (max-width: $lgScreenMin - 1) { @content; }
+  }
+
+
+}
+
+
+@mixin simplePage() {
+  width: 95%;
+  margin: auto;
+  max-width: 400px;
+
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,7 @@
+#signUpPage {
+  @include simplePage();
+
+  #signInPrompt {
+    text-align: center;
+  }
+}
