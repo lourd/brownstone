@@ -1,8 +1,8 @@
-UI.registerHelper('isLoggedIn', function() {
+Template.registerHelper('isLoggedIn', function() {
   return Meteor.userId() ? true : false;
 });
 
-UI.registerHelper("signedInAs", function(date) {
+Template.registerHelper("signedInAs", function(date) {
   // Make sure they're signed in
   if (Meteor.user()) {
     if (Meteor.user().username) {
@@ -17,4 +17,14 @@ UI.registerHelper("signedInAs", function(date) {
   } else {
     return "Not Signed In";
   }
+});
+
+Template.registerHelper('pluralizeS', function(word, len){
+  // Simple pluralize function that only works with words that are 
+  // plurarized with "s"
+  if(len===1){
+    return word;
+  }
+  return  word+"s";
+
 });
