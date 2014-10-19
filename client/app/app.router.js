@@ -10,6 +10,7 @@ Router.configure({
   }
 });
 
+
 // Have to sign in to access all application pages
 Router.onBeforeAction(function() {
   if (!Meteor.loggingIn() && !Meteor.user()) {
@@ -23,8 +24,7 @@ Router.onBeforeAction(function() {
     'forgotPasswordRoute',
     'signOutRoute',
     'resetPasswordRoute',
-    'pageNotFoundRoute',
-    'landingPageRoute'
+    'pageNotFoundRoute'
   ]
 });
 

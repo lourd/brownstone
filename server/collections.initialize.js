@@ -175,7 +175,7 @@ Meteor.startup(function() {
 			profile: {
 				firstName: 'Craig',
 				lastName: 'Cheney',
-				groups: [deltaAlphaId]
+				groups: [deltaAlphaId, phiSigId]
 			}
 		});
 		Groups.update({ _id: deltaAlphaId }, {

@@ -1,0 +1,24 @@
+<template name="groupTile">
+	<div class="groupTile">
+		<h3 class="groupName"><a href="<!-- {{pathFor 'groupsRoute'}} -->">{{ name }}</a></h3>
+		{{>Template.dynamic template=leaveJoinBtns}}
+		<p class="numOfMembers">{{readType}} {{members.length}} {{pluralizeS "Member" members.length}}</p>
+	</div>
+</template>
+	
+<template name="noGroups">
+	<div class="noGroups"><p class="noGroupsText">You are not part of any groups</p></div>
+</template>
+
+<template name="noGroupsToJoin">
+	<div class="noGroupsToJoin"> <p class="noGroupsToJoinText">There are no groups to join</p> </div>
+</template>
+
+
+<template name="leaveBtn">
+	<i class="leaveGroupBtn btn fa fa-minus-square"></i>
+</template>
+
+<template name="joinBtn">
+<i class="joinGroupBtn btn fa fa-plus-square"></i>
+</template>

@@ -1,0 +1,34 @@
+<template name="createGroupPane">
+	<div id="createGroupPane">
+	<h2>Create New Group</h2>
+		<section id= "newGroupTypeBtns">
+			<button type="radio" id="fratTypeBtn" class="{{ isActiveTab }} btn btn-default">
+			Fraternity
+			</button>
+			<button type="radio" id="soroTypeBtn" class="btn btn-default">
+			Sorority
+			</button>
+			<button type="radio" id="ilgTypeBtn" class="btn btn-default">
+			ILG
+			</button>
+			<button type="radio" id="otherTypeBtn" class="btn btn-default">
+			Other
+			</button>
+		</section>
+
+		<form id="newGroupForm">
+			{{> newGroupError}}
+			<div class="form-group">
+				<label for="newGroupName">Group Name</label>
+				<input id ="newGroupName" class="form-control" placeholder="Group name" type="text">
+			</div>
+			<div class="form-group">
+				<label for="newGroupGovernBody">Governing Body</label>
+				<input id ="newGroupGovernBody" class="form-control" placeholder="GoverningBody" type="text" disabled value="{{ governingBody }}">
+			</div>
+			<button id="newGroupSubmitBtn" type="submit" class="btn btn-default">
+				Create
+			</button>
+		</form>
+	</div>
+</template>

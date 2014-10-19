@@ -1,0 +1,11 @@
+<template name="myGroupsPane">
+	<main id="myGroupsPane">
+	{{#each groupOfMine}}
+		{{>groupTile}}
+	{{else}}
+		{{>noGroups}}	
+	{{/each}}
+	</main>
+</template>
+
+

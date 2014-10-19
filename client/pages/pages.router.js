@@ -14,6 +14,11 @@ Router.route("signUpRoute", {
   template: "signUpPage"
 });
 
+Router.route("groupsRoute",{
+  path:"/groups",
+  template:"groupsPage"
+});
+
 Router.route("signInRoute", {
   path: "/sign-in",
   template: "signInPage"
@@ -27,6 +32,8 @@ Router.route('signOutRoute', {
     Router.go('/');
   }
 });
+
+
 
 Router.route("forgotPasswordRoute", {
   path: "/forgot-password",

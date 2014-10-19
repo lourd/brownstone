@@ -1,0 +1,23 @@
+<template name="groupsPage">
+	<main id="groupsPage">
+		<section id="groupButtons">
+			<button type="radio" id="myGroupsBtn" class="btn btn-default"> <a href="#my">My Groups</a> 
+			</button>
+			<button type="radio" id="joinGroupBtn" class="btn btn-default"> <a href="#join">Join a Group</a> 
+			</button>
+			<button type="radio" id="createGroupBtn" class="btn btn-default"> <a href="#create">Create a Group</a> 
+			</button>
+		</section>
+		
+		<form id="searchBarText">
+			<div class="form-group">
+				<i id="searchIcon" class="fa fa-search"></i>
+				<input id="groupNameSearch" class="form-control" placeholder="Find a group" type="text">
+			</div>
+		</form>
+		
+		<section id="groupContentSection">
+			{{>Template.dynamic template=groupContent}}
+		</section>
+	</main>
+</template>
