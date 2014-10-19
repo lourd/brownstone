@@ -22,6 +22,8 @@ Router.route('signOutRoute', {
   }
 });
 
+
+
 Router.route("forgotPasswordRoute", {
   path: "/forgot-password",
   template: "forgotPasswordPage",
