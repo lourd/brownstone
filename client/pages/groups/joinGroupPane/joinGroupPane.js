@@ -4,9 +4,7 @@ Template.joinGroupPane.helpers({
 			return Groups.find({ _id: { $not:{$in: Meteor.user().profile.groups}}},
 								{sort: {name: 1 }});
 		}
-	}
-
-	
+	}	
 });
 
 Template.joinGroupPane.events({
