@@ -3,11 +3,10 @@
 // Global Configuration
 
 Router.configure({
-  layoutTemplate: 'appLayout',
+  layoutTemplate: 'signedOutLayout',
   notFoundTemplate: 'notFoundPage',
   yieldTemplates: {
-    'appHeader': {to: 'header'},
-    'appFooter': {to: 'footer'}
+    'appHeader': {to: 'header'}
   }
 });
 

@@ -6,10 +6,8 @@
 @import 'bourbon';
 @import 'mixins';
 
-// Import component styles
+@import 'layouts';
 @import 'pages';
-
-// Import workflows styles
 @import 'components';
 
 

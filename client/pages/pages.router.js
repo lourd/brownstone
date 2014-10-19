@@ -1,3 +1,14 @@
+// Controllers
+SignedInController = RouteController.extend({
+  layoutTemplate: 'signedInLayout',
+  yieldTemplates: {
+    'appHeader': {to: 'header'},
+    'dashboardMenu': {to: 'leftMenu'}
+  }
+});
+
+// Routes
+
 Router.route("signUpRoute", {
   path: "/sign-up",
   template: "signUpPage"
@@ -45,5 +56,6 @@ Router.route("404Route", {
 
 Router.route("dashboardRoute", {
   path: "/dashboard",
-  template: "dashboardPage"
+  template: "dashboardPage",
+  controller: SignedInController
 });
