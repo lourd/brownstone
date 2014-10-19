@@ -3,11 +3,10 @@
 // Global Configuration
 
 Router.configure({
-  layoutTemplate: 'appLayout',
+  layoutTemplate: 'signedOutLayout',
   notFoundTemplate: 'notFoundPage',
   yieldTemplates: {
-    'appHeader': {to: 'header'},
-    'appFooter': {to: 'footer'}
+    'appHeader': {to: 'header'}
   }
 });
 
@@ -24,7 +23,8 @@ Router.onBeforeAction(function() {
     'forgotPasswordRoute',
     'signOutRoute',
     'resetPasswordRoute',
-    'pageNotFoundRoute'
+    'pageNotFoundRoute',
+    'landingPageRoute'
   ]
 });
 
@@ -39,12 +39,7 @@ Router.onAfterAction(collapseHeaderNav);
 //--------------------------------------------------------------
 // Root route
 
-Router.route('landingRoute', {
+Router.route('landingPageRoute', {
   path: '/',
-  onBeforeAction: function(){
-    if (!Meteor.loggingIn() && !Meteor.user())
-      this.redirect('/sign-in');
-    else
-      this.redirect('/dashboard');
-  }
+  template: 'landingPage'
 });

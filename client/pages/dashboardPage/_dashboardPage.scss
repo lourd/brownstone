@@ -1,0 +1,6 @@
+#dashboardPage {
+  @include display(flex);
+  .placeholder {
+    margin: auto;
+  }
+}
