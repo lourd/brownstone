@@ -17,15 +17,12 @@ Template.joinGroupPane.events({
 					members:Meteor.userId()
 				}
 			});
-
 			//add group to user profile 
 			Meteor.users.update({_id:Meteor.userId()}, {
 				$push:{
 					"profile.groups":this._id
 				}
 			});
-
-
 		}
 		else{
 		}
