@@ -1,4 +1,4 @@
-Template.createGroupPage.events({
+Template.createGroupPane.events({
 	'click #fratTypeBtn' : function(event, template){
 		Session.set("newGroupTypeSelected","Fraternity");
 		template.$(".selectedButton").removeClass("selectedButton");
@@ -20,15 +20,19 @@ Template.createGroupPage.events({
 		template.$("#otherTypeBtn").addClass("selectedButton");
 	},	
 	'submit #newGroupForm': function(event, template){
-		
+		event.preventDefault();
+
 		var groupName = template.find("#newGroupName").value;
 
-		console.log(groupName);
+		
 	}
 });
 
 
-Template.createGroupPage.helpers({
+Template.createGroupPane.helpers({
+	isActiveTab: function() {
+		
+	},
 	governingBody: function () {
 		switch (Session.get("newGroupTypeSelected")) {
 			case 'Fraternity':

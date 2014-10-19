@@ -1,0 +1,15 @@
+<template name="joinGroupPane">
+	<main id="joinGroupPane">
+	{{#each groups }}
+		{{> joinGroupTile }}
+	{{/each}}
+	</main>
+</template>
+
+<template name="joinGroupTile ">
+	<div class="joinGroupTile ">
+		<h3 class="groupName"><a href="{{pathFor 'groupPage'}}">{{name}}</a></h3>
+		<i class="joinGroupBtn fa fa-plus-square"></i>
+		<p class="numOfMembers">{{> memberPlur members.length }}</p>
+	</div>
+</template>

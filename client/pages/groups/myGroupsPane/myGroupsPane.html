@@ -1,0 +1,16 @@
+<template name="myGroupsPane">
+	<main id="myGroupsPane">
+	{{#each groupOfMine}}
+		{{>groupTile}}
+	{{/each}}
+	</main>
+</template>
+
+<template name="groupTile">
+	<div class="groupTile">
+		<h3 class="groupName"><a href="{{pathFor 'groupPage'}}">{{ name }}</a></h3>
+		<i class="leaveGroupBtn fa fa-minus-square"></i>
+		<p class="numOfMembers">{{members.length}} Members</p>
+	</div>
+	
+</template>

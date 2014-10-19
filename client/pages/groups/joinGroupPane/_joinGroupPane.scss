@@ -1,0 +1,13 @@
+.joinGroupTile {
+	padding: 10px;
+
+	h3 {
+		display: inline-block;
+		margin: 0;
+	}
+	i {
+		float: right;
+		font-size: $font-size-h3;
+		padding: 2px;
+	}
+}
