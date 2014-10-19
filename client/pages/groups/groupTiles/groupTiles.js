@@ -11,11 +11,10 @@ Template.groupTile.helpers({
 	},
 
 	readType: function (){
-		console.log(this.type);
-
+		//make a name to display that is clean
 		switch (this.type){
 			case "FRATERNITY":
-				return "Frat - ";
+				return "Fraternity - ";
 			case "SORORTITY":
 				return "Sororty - ";
 			case "ILG":

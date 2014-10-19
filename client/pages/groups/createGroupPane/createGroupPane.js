@@ -1,3 +1,7 @@
+Session.set("newGroupTypeSelected","FRATERNITY");
+
+
+
 Template.createGroupPane.events({
 	'click #fratTypeBtn' : function(event, template){
 		Session.set("newGroupTypeSelected","FRATERNITY");
@@ -24,6 +28,10 @@ Template.createGroupPane.events({
 		var groupName = template.find("#newGroupName").value;
 		var groupType = Session.get("newGroupTypeSelected");
 
+		if (!groupName.length){
+			return Session.set("newGroupError", "Name is Blank");
+					}
+
 		
 		groupId = Groups.insert({
 			name: groupName,
@@ -40,8 +48,17 @@ Template.createGroupPane.events({
 			});
 
 		
+		$(".selectedButton").removeClass("selectedButton");
+		$("#myGroupsBtn").addClass("selectedButton");
+		Session.set("groupBtnSelected","myGroupsPane");
+		return Session.set("newGroupError",null);
+	
 	}
 });
+
+Template.createGroupPane.rendered = function () {
+	$("#fratTypeBtn").addClass("selectedButton");
+};
 
 
 Template.createGroupPane.helpers({

@@ -1,7 +1,8 @@
 Template.joinGroupPane.helpers({
 	groups: function () {
 		if (Meteor.user() !==undefined) {
-			return Groups.find({ _id: { $not:{$in: Meteor.user().profile.groups}}});
+			return Groups.find({ _id: { $not:{$in: Meteor.user().profile.groups}}},
+								{sort: {name: 1 }});
 		}
 	}
 

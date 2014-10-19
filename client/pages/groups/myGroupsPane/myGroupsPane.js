@@ -1,7 +1,9 @@
 Template.myGroupsPane.helpers({
 	groupOfMine: function () {
 		if ( Meteor.user() !==undefined ) {
-			return Groups.find({ _id: { $in: Meteor.user().profile.groups }});
+			return Groups.find({ _id: { $in: Meteor.user().profile.groups }},
+									{sort: {name: 1 }}); 
+					
 		}
 		
 		

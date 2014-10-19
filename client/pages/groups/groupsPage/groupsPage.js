@@ -2,6 +2,9 @@
 
 Session.setDefault("groupBtnSelected", "myGroupsPane");
 
+Template.groupsPage.rendered = function () {
+	$("#myGroupsBtn").addClass("selectedButton");
+};
 
 Template.groupsPage.events({
 	'click #myGroupsBtn' : function(event, template){
@@ -29,6 +32,3 @@ Template.groupsPage.helpers({
 	}
 });
 
-Template.groupsPage.rendered = function () {
-	$("#myGroupsBtn").addClass("selectedButton");
-};
