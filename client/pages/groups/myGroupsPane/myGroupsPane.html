@@ -2,15 +2,10 @@
 	<main id="myGroupsPane">
 	{{#each groupOfMine}}
 		{{>groupTile}}
+	{{else}}
+		{{>noGroups}}	
 	{{/each}}
 	</main>
 </template>
 
-<template name="groupTile">
-	<div class="groupTile">
-		<h3 class="groupName"><a href="<!-- {{pathFor 'groupsRoute'}} -->">{{ name }}</a></h3>
-		<i class="leaveGroupBtn btn fa fa-minus-square"></i>
-		<p class="numOfMembers">{{members.length}} {{pluralizeS "Member" members.length}}</p>
-	</div>
-	
-</template>
+

@@ -1,11 +1,11 @@
 Template.createGroupPane.events({
 	'click #fratTypeBtn' : function(event, template){
-		Session.set("newGroupTypeSelected","Fraternity");
+		Session.set("newGroupTypeSelected","FRATERNITY");
 		template.$(".selectedButton").removeClass("selectedButton");
 		template.$("#fratTypeBtn").addClass("selectedButton");
 	},
 	'click #soroTypeBtn' : function(event, template){
-		Session.set("newGroupTypeSelected","Sorority");
+		Session.set("newGroupTypeSelected","SORORITY");
 		template.$(".selectedButton").removeClass("selectedButton");
 		template.$("#soroTypeBtn").addClass("selectedButton");
 	},
@@ -15,14 +15,29 @@ Template.createGroupPane.events({
 		template.$("#ilgTypeBtn").addClass("selectedButton");
 	},
 	'click #otherTypeBtn' : function(event, template){
-		Session.set("newGroupTypeSelected","otherType");
+		Session.set("newGroupTypeSelected","OTHER");
 		template.$(".selectedButton").removeClass("selectedButton");
 		template.$("#otherTypeBtn").addClass("selectedButton");
 	},	
 	'submit #newGroupForm': function(event, template){
 		event.preventDefault();
-
 		var groupName = template.find("#newGroupName").value;
+		var groupType = Session.get("newGroupTypeSelected");
+
+		
+		groupId = Groups.insert({
+			name: groupName,
+			type: groupType,
+			members: [Meteor.userId()],
+			positions: [],
+			admins: [Meteor.userId()]
+		});
+
+		Meteor.users.update({_id:Meteor.userId()}, {
+				$push:{
+					"profile.groups":groupId
+				}
+			});
 
 		
 	}
@@ -35,9 +50,9 @@ Template.createGroupPane.helpers({
 	},
 	governingBody: function () {
 		switch (Session.get("newGroupTypeSelected")) {
-			case 'Fraternity':
+			case 'FRATERNITY':
 				return 'IFC';
-			case 'Sorority':
+			case 'SORORITY':
 				return 'Panhel';
 			case 'ILG':
 				return 'Living Group Council';

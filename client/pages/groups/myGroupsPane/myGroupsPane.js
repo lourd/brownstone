@@ -14,8 +14,6 @@ Template.myGroupsPane.events({
 		reply=confirm("Are you sure you want to leave "+this.name+"?");
 
 		if (reply){
-			console.log("left");
-
 			//remove user id from group list
 			Groups.update({_id:this._id}, {
 				$pull:{
@@ -32,7 +30,7 @@ Template.myGroupsPane.events({
 		}
 
 		else{
-			console.log("didn't leave");
+
 		}
 	}
 });

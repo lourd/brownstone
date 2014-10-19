@@ -5,9 +5,12 @@
 		display: inline-block;
 		margin: 0;
 	}
-	i {
-		float: right;
-		font-size: $font-size-h3;
-		padding: 2px;
+}
+
+.noGroups{
+
+	.noGroupsText{
+		opacity:.5;
+		float:left;
 	}
 }

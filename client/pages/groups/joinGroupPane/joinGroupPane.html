@@ -1,15 +1,21 @@
 <template name="joinGroupPane">
 	<main id="joinGroupPane">
 	{{#each groups }}
-		{{> joinGroupTile }}
+		{{> groupTile }}
+	{{else}}
+		{{> noGroupsToJoin}}
 	{{/each}}
 	</main>
 </template>
 
-<template name="joinGroupTile ">
+<!-- <template name="joinGroupTile ">
 	<div class="joinGroupTile ">
 		<h3 class="groupName"><a href="{{pathFor 'groupPage'}}">{{name}}</a></h3>
 		<i class="joinGroupBtn btn fa fa-plus-square"></i>
-		<p class="numOfMembers">{{ members.length }} {{pluralizeS "Member" members.length}}</p>
+		<p class="numOfMembers">{{type}} {{ members.length }} {{pluralizeS "Member" members.length}}</p>
 	</div>
 </template>
+
+<template name="noGroupsToJoin">
+	<div class="noGroupsToJoin"> <p class="noGroupsToJoinText">There are no groups to join</p> </div>
+</template> -->
