@@ -1,5 +1,26 @@
 <template name="joinGroupPage">
 	<main id="joinGroupPage">
-	join groups
+	{{#each existingGroup}}
+		{{> existingGroupTile}}
+	{{/each}}
 	</main>
+</template>
+
+<template name="existingGroupTile">
+	<section id="existingGroupTile">
+		<section id="groupName">
+			{{name}}
+		</section>
+		<section id ="Group Buttons">
+			<button id="viewGroupBtn" class ="btn btn-default">
+				View Group
+			</button>
+			<button id="joinGroupBtn" class ="btn btn-default">
+				Join Group
+			</button>
+		</section>		
+		<p>
+		{{members.length}} Members
+		</p>
+	</section>
 </template>

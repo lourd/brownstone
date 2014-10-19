@@ -19,6 +19,12 @@ Template.createGroupPage.events({
 		template.$(".selectedButton").removeClass("selectedButton");
 		template.$("#otherTypeBtn").addClass("selectedButton");
 	},	
+	'submit #newGroupForm': function(event, template){
+		
+		var groupName = template.find("#newGroupName").value;
+
+		console.log(groupName);
+	}
 });
 
 
