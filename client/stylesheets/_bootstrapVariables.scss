@@ -2,23 +2,15 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-darker:            $darkGray;
-$gray-dark:              lighten($gray-darker, 20%);
-$gray:                   $mediumGray;
-$gray-lighter:           $lightGray;
-$gray-light:             darken($gray-lighter, 20%);
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 46.7%) !default; // #777
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 
-$brand-primary:          $groveOrange;
-$brand-primary-dark:     darken($brand-primary, 10%) ;
-$brand-primary-darker:   darken($brand-primary, 20%) ;
-$brand-primary-light:    lighten($brand-primary, 10%) ;
-$brand-primary-lighter:  lighten($brand-primary, 20%) ;
-
-$brand-secondary:        $groveGreen;
-$brand-secondary-dark:   darken($brand-secondary, 10%);
-
-$brand-success:          #5cb85c !default;
-$brand-info:             #5bc0de !default;
+$brand-primary:          $brickRed;
+$brand-success:          $oxCopper;
+$brand-info:             $lightBrown;
 $brand-warning:          #f0ad4e !default;
 $brand-danger:           #d9534f !default;
 
@@ -177,7 +169,7 @@ $input-border:                   #ccc !default;
 //** `<input>` border radius
 $input-border-radius:            $border-radius-base !default;
 //** Border color for inputs on focus
-$input-border-focus:             $groveOrange !default;
+$input-border-focus:             $brand-primary !default;
 
 //** Placeholder text color
 $input-color-placeholder:        $gray-light !default;
@@ -330,8 +322,8 @@ $navbar-padding-horizontal:        0px; //floor(($grid-gutter-width / 2)) !defau
 $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
 $navbar-collapse-max-height:       340px !default;
 
-$navbar-default-color:             white;
-$navbar-default-bg:                $groveOrange;
+$navbar-default-color:             #fff;
+$navbar-default-bg:                $brand-primary;
 $navbar-default-border:            $navbar-default-bg;
 
 // Navbar links

@@ -1,10 +1,18 @@
+$west-panel-width: 250px;
+
+$header-link-height: 10px;
+
+$smScreenMin:  481px;
+$mdScreenMin:  768px;
+$lgScreenMin:  1025px;
+$xlScreenMin:  1281px;
+
 // Grove colors
 
-$groveOrange: #FF8F12;
-$groveGreen: #A8D032;
-$darkGray: #333030;
-$mediumGray: #D4D3D3;
-$lightGray: #F3F2F2;
+$brickRed:    #8E3B35;
+$lightBrown:  #AF7A60;
+$oxCopper:    #32A981;
+$lightGray:   #CCCCCC;
 
 // Fonts
 
@@ -17,9 +25,6 @@ $roundedBoldTitleFont:  "Bariol Bold";
 $roundedThinTitleFont:  "Bariol Light";
 
 $thinBodyFont:  "Freight Sans Light", Helvetica, Arial, sans-serif;
-
-// Navbar background color
-$navbarBgColor: rgba($darkGray, 0.8);
 
 $hoverColorTransTime: 100ms;
 

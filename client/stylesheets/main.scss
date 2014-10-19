@@ -1,5 +1,4 @@
-@import 'styleVariables';
-@import 'structureVariables';
+@import 'variables';
 @import 'bootstrapVariables';
 // Import bootstrap last as to override variables correctly
 @import 'bootstrap';
@@ -37,4 +36,14 @@ ul {
 svg {
   max-height: 100%;
   max-width: 100%;
+}
+
+* {
+  @include transition(background-color $hoverColorTransTime, 
+                      color $hoverColorTransTime,
+                      fill $hoverColorTransTime, 
+                      opacity 350ms,
+                      transform 350ms,
+                      font-size 350ms
+                      );
 }
