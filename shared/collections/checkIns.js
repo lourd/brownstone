@@ -1,1 +1,1 @@
-CheckIns = new Meteor.Collection('checkIns');
+CheckIns = new Mongo.Collection('checkIns');

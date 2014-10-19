@@ -1,1 +1,1 @@
-Events = new Meteor.Collection('events');
+Events = new Mongo.Collection('events');

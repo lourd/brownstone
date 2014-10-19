@@ -1,1 +1,1 @@
-Groups = new Meteor.Collection('groups');
+Groups = new Mongo.Collection('groups');
